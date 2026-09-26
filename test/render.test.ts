@@ -18,11 +18,14 @@ test('renders embeds, Components V2 and watermark', () => {
   assert.match(html, /firerobots\.com\.br/);
 });
 
-test('renders Components V2 headings and mention highlights', () => {
+test('renders Components V2 headings, accents and mention highlights', () => {
   const html = renderTranscript({
     id: 'highlight-test', createdAt: new Date().toISOString(), guild: { name: 'Fire Bots' }, channel: { name: 'ticket' },
-    messages: [{ highlight: true, author: { username: 'Bot', bot: true }, components: [{ type: 17, components: [{ type: 10, content: '## Olá\nTexto' }] }] }]
+    messages: [{ highlight: true, author: { username: 'Bot', bot: true }, components: [{ type: 17, components: [{ type: 10, content: '  ## Olá, aplicação!\nNinguém assumiu ainda\napps.tsx' }] }] }]
   });
   assert.match(html, /message[^\"]*highlight/);
-  assert.match(html, /<h2>Olá<\/h2>/);
+  assert.match(html, /<h2>Olá, aplicação!<\/h2>/);
+  assert.match(html, /Ninguém assumiu ainda/);
+  assert.match(html, /apps\.tsx/);
+  assert.doesNotMatch(html, /## Olá/);
 });

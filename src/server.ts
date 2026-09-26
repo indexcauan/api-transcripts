@@ -71,7 +71,7 @@ app.delete('/v1/transcripts/:id', authenticate, async (req, res, next) => {
 });
 
 app.get('/transcripts/:id', async (req, res, next) => {
-  try { const doc = await getTranscript(String(req.params.id)); if (!doc) return res.status(404).type('text').send('Transcript não encontrado.'); return res.type('html').set('Cache-Control', 'public, max-age=60').send(renderTranscript(doc)); } catch (error) { next(error); }
+  try { const doc = await getTranscript(String(req.params.id)); if (!doc) return res.status(404).type('text').send('Transcript não encontrado.'); return res.type('html').set('Cache-Control', 'no-store, max-age=0').send(renderTranscript(doc)); } catch (error) { next(error); }
 });
 
 app.use((_req, res) => res.status(404).json({ error: 'not_found' }));
