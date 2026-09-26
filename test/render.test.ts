@@ -7,7 +7,7 @@ test('escapes message HTML and rejects unsafe links', () => {
   assert.equal(internals.safeUrl('javascript:alert(1)'), '');
 });
 
-test('renders embeds, Components V2 and watermark', () => {
+test('renders embeds, Components V2 and copyright footer', () => {
   const html = renderTranscript({
     id: 'abcdefgh', createdAt: new Date().toISOString(), guild: { name: 'Fire Bots' }, channel: { name: 'ticket-001' },
     messages: [{ author: { username: 'Cliente', bot: false }, content: 'Olá', embeds: [{ title: 'Atendimento', color: 0xed4245 }], components: [{ type: 17, accent_color: 0xed4245, components: [{ type: 10, content: '**Ticket encerrado**' }] }] }]
@@ -15,7 +15,8 @@ test('renders embeds, Components V2 and watermark', () => {
   assert.match(html, /class="embed"/);
   assert.match(html, /class="container"/);
   assert.match(html, /<strong>Ticket encerrado<\/strong>/);
-  assert.match(html, /firerobots\.com\.br/);
+  assert.match(html, /Exported 1 message\. • Fire Bots © 2026/);
+  assert.doesNotMatch(html, /class="watermark"/);
 });
 
 test('renders Components V2 headings, accents and mention highlights', () => {
