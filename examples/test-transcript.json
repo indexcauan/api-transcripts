@@ -1,0 +1,178 @@
+{
+  "guild": {
+    "id": "102030405060708090",
+    "name": "Fire Bots Community",
+    "iconUrl": "https://cdn.discordapp.com/embed/avatars/0.png"
+  },
+  "channel": {
+    "id": "998877665544332211",
+    "name": "ticket-pedro",
+    "topic": "Suporte • Pedido #FB-2026-0926"
+  },
+  "metadata": {
+    "ticketId": "FB-2026-0926",
+    "status": "closed"
+  },
+  "messages": [
+    {
+      "id": "100000000000000001",
+      "timestamp": "2026-09-26T15:30:00.000Z",
+      "author": {
+        "id": "111111111111111111",
+        "username": "Fire Bots",
+        "global_name": "Fire Bots",
+        "avatar_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+        "bot": true
+      },
+      "content": "Olá <@222222222222222222>! Seu atendimento foi iniciado.",
+      "embeds": [
+        {
+          "author": {
+            "name": "Central de Atendimento Fire Bots",
+            "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+          },
+          "title": "Ticket #FB-2026-0926",
+          "description": "Obrigado por entrar em contato. Descreva sua dúvida e nossa equipe responderá em breve.",
+          "color": 15548997,
+          "fields": [
+            { "name": "Categoria", "value": "Suporte técnico", "inline": true },
+            { "name": "Prioridade", "value": "Normal", "inline": true },
+            { "name": "Status", "value": "🟢 Aberto", "inline": true }
+          ],
+          "footer": { "text": "Fire Bots • Sistema de tickets" },
+          "timestamp": "2026-09-26T15:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "100000000000000002",
+      "timestamp": "2026-09-26T15:31:12.000Z",
+      "author": {
+        "id": "222222222222222222",
+        "username": "pedro.dev",
+        "global_name": "Pedro",
+        "avatar_url": "https://cdn.discordapp.com/embed/avatars/1.png"
+      },
+      "content": "Olá! Gostaria de saber como configuro o bot no meu servidor."
+    },
+    {
+      "id": "100000000000000003",
+      "timestamp": "2026-09-26T15:33:46.000Z",
+      "author": {
+        "id": "333333333333333333",
+        "username": "ana.suporte",
+        "global_name": "Ana • Suporte",
+        "avatar_url": "https://cdn.discordapp.com/embed/avatars/2.png"
+      },
+      "member": {
+        "nick": "Ana • Suporte",
+        "color": 5763719
+      },
+      "referenced_message": {
+        "author": {
+          "id": "222222222222222222",
+          "username": "pedro.dev",
+          "global_name": "Pedro",
+          "avatar_url": "https://cdn.discordapp.com/embed/avatars/1.png"
+        },
+        "content": "Olá! Gostaria de saber como configuro o bot no meu servidor."
+      },
+      "content": "Olá, Pedro! Acesse o painel e siga estas etapas:\n\n1. Selecione seu servidor\n2. Autorize as permissões\n3. Configure o canal de tickets\n\nSe precisar, veja também https://firerobots.com.br",
+      "reactions": [
+        { "count": 2, "emoji": { "name": "👍" } },
+        { "count": 1, "me": true, "emoji": { "name": "🔥" } }
+      ]
+    },
+    {
+      "id": "100000000000000004",
+      "timestamp": "2026-09-26T15:35:10.000Z",
+      "author": {
+        "id": "111111111111111111",
+        "username": "Fire Bots",
+        "global_name": "Fire Bots",
+        "avatar_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+        "bot": true
+      },
+      "components": [
+        {
+          "type": 17,
+          "accent_color": 15548997,
+          "components": [
+            {
+              "type": 9,
+              "components": [
+                {
+                  "type": 10,
+                  "content": "## Guia rápido\nConfigure tudo pelo painel da **Fire Bots**."
+                }
+              ],
+              "accessory": {
+                "type": 11,
+                "media": { "url": "https://cdn.discordapp.com/embed/avatars/0.png" },
+                "description": "Logo Fire Bots"
+              }
+            },
+            { "type": 14, "divider": true, "spacing": 2 },
+            {
+              "type": 10,
+              "content": "### Recursos disponíveis\n- Sistema de tickets\n- Logs de moderação\n- Atendimento automatizado"
+            },
+            {
+              "type": 12,
+              "items": [
+                {
+                  "media": { "url": "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?auto=format&fit=crop&w=800&q=80" },
+                  "description": "Interface de comunidade"
+                },
+                {
+                  "media": { "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" },
+                  "description": "Painel de configurações"
+                }
+              ]
+            },
+            {
+              "type": 1,
+              "components": [
+                { "type": 2, "style": 5, "label": "Abrir painel", "url": "https://firerobots.com.br", "emoji": { "name": "🔥" } },
+                { "type": 2, "style": 2, "label": "Documentação", "custom_id": "docs", "disabled": true }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "100000000000000005",
+      "timestamp": "2026-09-26T15:41:20.000Z",
+      "author": {
+        "id": "222222222222222222",
+        "username": "pedro.dev",
+        "global_name": "Pedro",
+        "avatar_url": "https://cdn.discordapp.com/embed/avatars/1.png"
+      },
+      "content": "Consegui configurar. Muito obrigado!"
+    },
+    {
+      "id": "100000000000000006",
+      "timestamp": "2026-09-26T15:42:00.000Z",
+      "author": {
+        "id": "111111111111111111",
+        "username": "Fire Bots",
+        "global_name": "Fire Bots",
+        "avatar_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+        "bot": true
+      },
+      "components": [
+        {
+          "type": 17,
+          "accent_color": 5763719,
+          "components": [
+            { "type": 10, "content": "## ✅ Ticket encerrado\nEste atendimento foi concluído por **Ana • Suporte**." },
+            { "type": 14, "divider": true, "spacing": 1 },
+            { "type": 10, "content": "Obrigado por utilizar a Fire Bots!" }
+          ]
+        }
+      ]
+    }
+  ]
+}
