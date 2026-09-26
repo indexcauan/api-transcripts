@@ -65,6 +65,8 @@ export interface DiscordMessage {
   reactions?: Array<{ count?: number; me?: boolean; emoji?: { id?: string | null; name?: string | null; animated?: boolean } }>;
   referenced_message?: DiscordMessage | null;
   message_reference?: { message_id?: Snowflake };
+  /** Highlights the message like a Discord mention. */
+  highlight?: boolean;
 }
 
 export interface TranscriptDocument {

@@ -17,3 +17,12 @@ test('renders embeds, Components V2 and watermark', () => {
   assert.match(html, /<strong>Ticket encerrado<\/strong>/);
   assert.match(html, /firerobots\.com\.br/);
 });
+
+test('renders Components V2 headings and mention highlights', () => {
+  const html = renderTranscript({
+    id: 'highlight-test', createdAt: new Date().toISOString(), guild: { name: 'Fire Bots' }, channel: { name: 'ticket' },
+    messages: [{ highlight: true, author: { username: 'Bot', bot: true }, components: [{ type: 17, components: [{ type: 10, content: '## Olá\nTexto' }] }] }]
+  });
+  assert.match(html, /message[^\"]*highlight/);
+  assert.match(html, /<h2>Olá<\/h2>/);
+});

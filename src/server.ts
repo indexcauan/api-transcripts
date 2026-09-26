@@ -1,16 +1,32 @@
 import crypto from 'node:crypto';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import express from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
 import helmet from 'helmet';
 import { z } from 'zod';
 import { deleteTranscript, getTranscript, initStore, purgeExpired, saveTranscript } from './store.js';
 import { renderTranscript } from './render.js';
 import type { TranscriptDocument } from './types.js';
 
+// Carrega o .env tanto em desenvolvimento (src/) quanto após a compilação (dist/src/).
+// Variáveis já definidas pelo ambiente de produção nunca são sobrescritas.
+const moduleDirectory = path.dirname(fileURLToPath(import.meta.url));
+for (const candidate of [
+  path.resolve(process.cwd(), '.env'),
+  path.resolve(moduleDirectory, '../.env'),
+  path.resolve(moduleDirectory, '../../.env')
+]) dotenv.config({ path: candidate, override: false, quiet: true });
+
 const app = express();
 const port = Number(process.env.PORT || 3000);
 const baseUrl = (process.env.PUBLIC_BASE_URL || `http://localhost:${port}`).replace(/\/$/, '');
 const apiKey = process.env.API_KEY || '';
+
+if (process.env.NODE_ENV === 'production' && !apiKey) {
+  console.warn('AVISO: API_KEY não configurada; as rotas /v1 estão públicas.');
+}
 
 app.set('trust proxy', process.env.TRUST_PROXY === 'true');
 app.disable('x-powered-by');
